@@ -5,7 +5,7 @@ const BASE_URL = "https://fakestoreapi.com/products"; // API base URL
 // Function to create and export API methods
 export const get = async (url, config = {}) => {
   try {
-    const response = await axios.get(`${BASE_URL}${url}`, config);
+    const response = await axios.get(`${BASE_URL}`, config);
     return response.data;
   } catch (error) {
     throw new Error(error.response.data.error || "Something went wrong");

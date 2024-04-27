@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import logo from "./logo.svg";
 import "./App.css";
 import { Route, Routes, useLocation } from "react-router-dom";
@@ -20,8 +23,8 @@ import {
   getBannerOnce,
   removeBannerOnce,
 } from "./utils/sessionStorage";
-import { loadingStart, loadingStop } from "./redux/slices/auth.slice";
-
+import { getUserAuth } from "./utils/sessionStorage";
+import { sessionDataSet } from "./redux/slices/auth.slice";
 function App() {
   const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
@@ -33,10 +36,34 @@ function App() {
   );
 
   useEffect(() => {
+    if (getUserAuth() && userData === null) {
+      dispatch(sessionDataSet(getUserAuth()));
+    }
+  }, [dispatch, userData, token, Authenticated, loading, error]);
+
+  useEffect(() => {
+    if (Authenticated && userData === null) {
+      toast.success("Login Successful!");
+    }
+    if (error) {
+      toast.error("Login Failed!");
+    }
+  }, [Authenticated, error, userData]);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
+    if (location.pathname === "/") {
+      document.title = "Replay Global";
+    } else {
+      document.title = "Replay Global" + " - " + location.pathname.slice(1);
+    }
   }, [location.pathname]);
 
   useEffect(() => {
@@ -51,22 +78,27 @@ function App() {
 
   return (
     <>
+      <ToastContainer />
+
       {getBannerOnce() && bannerLoading && <Banner />}
       {(isLoading || loading) && <Loader />}
 
       <Routes>
-        <Route path="*" element={<Login />} />
-        <Route path="/Singup" element={<Singup />} />
-
-        {/*----------------- Proflie -----------------*/}
-        {(sessionStorage.getItem("user") || userData) && (
+        {/*----------------- Authentication -----------------*/}
+        {getUserAuth() && !!userData ? (
           <>
+            <Route path="/" element={<Home />} />
             <Route path="/Home" element={<Home />} />
             <Route path="/Contact" element={<Contact />} />
             <Route path="/Category" element={<Category />} />
             <Route path="/Feature" element={<Feature />} />
             <Route path="/About" element={<About />} />
             <Route path="/Proflie" element={<Proflie />} />
+          </>
+        ) : (
+          <>
+            <Route path="*" element={<Login />} />
+            <Route path="/Singup" element={<Singup />} />
           </>
         )}
         <Route path="*" element={<Page404 />} />

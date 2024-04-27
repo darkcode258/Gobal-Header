@@ -1,9 +1,38 @@
-import Theamdark from "../Theamdark";
+import { useEffect } from "react";
 import "../../Asseat/Css/login.css";
 import Theam from "../Theam";
 import logo from "../../Asseat/images/Global (1).png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { signInWithGooglePopup } from "../../firebase/firebase.utils";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  loginStart,
+  loginSuccess,
+  loginError,
+} from "../../redux/slices/auth.slice";
+
+import { setUserAuth } from "../../utils/sessionStorage";
 export default function Login() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { userData } = useSelector((state) => state.auth);
+
+  const logGoogleUser = async () => {
+    dispatch(loginStart());
+    try {
+      const response = await signInWithGooglePopup();
+      const user = response.user; // Get the user object from the response
+      console.log("User:", user.providerData[0]);
+      dispatch(loginSuccess(user.providerData[0]));
+      setUserAuth(user.providerData[0]);
+      navigate("/Home");
+      // Now you can access user data such as user.displayName, user.email, user.photoURL, etc.
+    } catch (error) {
+      console.error("Error signing in with Google:", error);
+      dispatch(loginError(error));
+    }
+  };
+
   return (
     <section className="sizer">
       {/* <Theamdark /> */}
@@ -79,7 +108,8 @@ export default function Login() {
           </form>
           <br />
           <button
-            type="submit"
+            onClick={logGoogleUser}
+            type="button"
             className="flex w-full justify-center rounded-md bg-amber-500 px-3 py-1.5 px-3text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             Login with Google
@@ -87,12 +117,12 @@ export default function Login() {
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Don't have an Account ?{" "}
-            <a
-              href="/Singup"
+            <Link
+              to="/Singup"
               className="font-semibold leading-6 text-amber-600 hover:text-amber-500"
             >
               Sign up Account
-            </a>
+            </Link>
           </p>
         </div>
       </div>

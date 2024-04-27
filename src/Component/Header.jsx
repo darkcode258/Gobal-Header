@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "../Asseat/images/logo.png";
@@ -8,24 +8,13 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 // redux auth slice
-import {
-  loginStart,
-  loginSuccess,
-  loginError,
-  logOut,
-  loadingStart,
-  loadingStop,
-} from "../redux/slices/auth.slice";
+import { logOut } from "../redux/slices/auth.slice";
 
 // session storage
-import {
-  setUserAuth,
-  getUserAuth,
-  removeUserAuth,
-} from "../utils/sessionStorage";
+import { removeUserAuth } from "../utils/sessionStorage";
 
 const navigation = [
-  { name: "Home", href: "/" },
+  { name: "Home", href: "/Home" },
   { name: "Category", href: "/Category" },
   { name: "Feature", href: "/Feature" },
   { name: "Contact ", href: "/Contact" },
@@ -34,12 +23,19 @@ const navigation = [
 
 export default function Header() {
   const location = useLocation();
+  const navigate = useNavigate();
   //redux
-  const { userData, token, Authenticated, loading, error } = useSelector(
-    (state) => state.auth
-  );
+  const { userData } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   //redux
+
+  const handleLogout = () => {
+    if (window.confirm("Are you want to log out?")) {
+      dispatch(logOut());
+      removeUserAuth();
+      navigate("/");
+    }
+  };
 
   return (
     <Disclosure as="nav" className="bg-gray-800 fixed w11 maar ">
@@ -62,14 +58,13 @@ export default function Header() {
 
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center  ms-0 mm11">
-                  <img
-                    className="h-8 w-auto items-center flex"
-                    src={logo}
-                    alt="Your Company"
-                    onClick={() => {
-                      window.location.href = "/";
-                    }}
-                  />
+                  <Link to="/">
+                    <img
+                      className="h-8 w-auto items-center flex"
+                      src={logo}
+                      alt="Your Company"
+                    />
+                  </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
@@ -78,12 +73,12 @@ export default function Header() {
                         key={item.name}
                         to={item.href}
                         className={`
-                          (${
+                          ${
                             item.href === location.pathname
-                              ? "bg-dark-700  text-white"
+                              ? "bg-gray-700  text-white"
                               : "text-gray-300 hover:bg-dark-700 hover:text-amber-500"
                           }
-                          "rounded-md px-3 py-2 text-sm font-medium select-none"`}
+                          rounded-md px-3 py-2 text-sm font-medium select-none`}
                       >
                         {item.name}
                       </Link>
@@ -94,10 +89,10 @@ export default function Header() {
 
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {/* Profile dropdown */}
-                {/* {!!getUserAuth() || isAuthenticated ? ( */}
+
                 <>
                   <h1 className="text-white font-bold md:block hidden">
-                    {userData?.name}
+                    {userData?.displayName}
                   </h1>
 
                   <Menu as="div" className="relative ml-5">
@@ -107,7 +102,7 @@ export default function Header() {
                         <span className="sr-only">Open user menu</span>
                         <img
                           className="h-8 w-8 rounded-full"
-                          src={userData?.picture || user1}
+                          src={userData?.photoURL || user1}
                           alt="user"
                         />
                       </Menu.Button>
@@ -129,7 +124,7 @@ export default function Header() {
                               className={`
                                 ${
                                   active ? "bg-gray-100" : ""
-                                }"block px-4 py-2 text-sm text-dark hover:text-amber-500 hover:font-semibold"`}
+                                } block px-4 py-2 text-sm text-dark hover:text-amber-500 hover:font-semibold`}
                             >
                               Your Profile
                             </Link>
@@ -140,7 +135,7 @@ export default function Header() {
                             <Link
                               to="#"
                               className={`${active ? "bg-gray-100" : ""}
-                                "block px-4 py-2 text-sm text-dark  hover:text-amber-500 hover:font-semibold"
+                                block px-4 py-2 text-sm text-dark  hover:text-amber-500 hover:font-semibold
                               `}
                             >
                               Settings
@@ -150,12 +145,10 @@ export default function Header() {
                         <Menu.Item>
                           {({ active }) => (
                             <Link
-                              // onClick={handleLogout}
-                              // onClick={userLogout}
-                              className={
-                                (active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-sm text-dark  hover:text-amber-500 hover:font-semibold")
-                              }
+                              onClick={handleLogout}
+                              className={`
+                                ${active ? "bg-gray-100" : ""}
+                                block px-4 py-2 text-sm text-dark  hover:text-amber-500 hover:font-semibold`}
                             >
                               Sign out
                             </Link>
@@ -309,15 +302,7 @@ export default function Header() {
                     </Menu>
                   </button>
                 </>
-                ) : (
-                <Link
-                  // onClick={() => loginWithRedirect()}
-                  // onClick={userLogin}
-                  className="rounded-md bg-amber-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:text-black hover:bg-amber-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 button"
-                >
-                  Login
-                </Link>
-                {/* )} */}
+
                 {/* Profile dropdown */}
               </div>
             </div>

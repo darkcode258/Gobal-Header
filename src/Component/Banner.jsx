@@ -25,7 +25,7 @@ const Banner = () => {
         alt="logo"
         className="user-select-none w-20 aspect-square animate-pulse"
       />
-      <h1 className={`text-xl text-gray-500 font-bold  transition-all duration-1000 ease-in-out ${animationTitle.length == title.length ? "animate-ping" : ""}`}>
+      <h1 className={`text-xl text-gray-500 font-bold  transition-all duration-1000 ease-in-out ${animationTitle.length === title.length ? "animate-ping" : ""}`}>
         {animationTitle.map((letter, index) => (
           <span key={index}>{letter}</span>
         ))}
