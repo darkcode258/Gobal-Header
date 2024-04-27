@@ -1,7 +1,7 @@
 import Theamdark from "../Theamdark";
 import "../Css/login.css"
 import Theam from "../Theam";
-import logo from "../../Asseat/Global (1).png"
+import logo from "../../Asseat/images/Global (1).png"
 export default function Login() {
     return (
         <section className="sizer">

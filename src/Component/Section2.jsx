@@ -1,6 +1,6 @@
 import React from 'react'
 import Theamdark from './Theamdark';
-import './Css/Section2.css'
+import '../Asseat/Css/Section2.css'
 
 function Section2() {
     return (

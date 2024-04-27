@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from "../Asseat/Global (1).png";
+import logo from "../Asseat/images/Global (1).png";
 const Banner = () => {
   const [animationTitle, setAnimationTitle] = useState([]);
   const title = "Replay Global";

@@ -1,6 +1,6 @@
 import React from 'react'
-import logo from '../Asseat/logo.png'
-import './Css/Footer.css'
+import logo from '../Asseat/images/logo.png'
+import '../Asseat/Css/Footer.css'
 
 
 function Footer() {
