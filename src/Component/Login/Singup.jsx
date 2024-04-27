@@ -1,7 +1,8 @@
 import Theamdark from "../Theamdark";
-import "../Css/login.css"
+import "../../Asseat/Css/login.css"
 import Theam from "../Theam";
 import logo from "../../Asseat/images/Global (1).png"
+import { Link } from "react-router-dom";
 export default function Login() {
     return (
         <section className="sizer">
@@ -61,9 +62,9 @@ export default function Login() {
                                     Password
                                 </label>
                                 <div className="text-sm">
-                                    <a href="#" className="font-semibold text-amber-600 hover:text-amber-500">
+                                    <Link to="#" className="font-semibold text-amber-600 hover:text-amber-500">
                                         Forgot password?
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="mt-2">
@@ -90,9 +91,9 @@ export default function Login() {
 
                     <p className="mt-10 text-center text-sm text-gray-500">
                         I Have already !{' '}
-                        <a href="/login" className="font-semibold leading-6 text-amber-600 hover:text-amber-500">
+                        <Link to="/login" className="font-semibold leading-6 text-amber-600 hover:text-amber-500">
                             Login Account
-                        </a>
+                        </Link>
                     </p>
                 </div>
             </div>
