@@ -4,6 +4,8 @@ import logo from "../../Asseat/images/Global (1).png";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithGooglePopup } from "../../firebase/firebase.utils";
 import { useSelector, useDispatch } from "react-redux";
+import { FcGoogle } from "react-icons/fc";
+
 import {
   loginStart,
   loginSuccess,
@@ -114,10 +116,10 @@ export default function Singup() {
               </div>
             </div>
 
-            <div>
+            <div className="d-flex justify-center items-center">
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-amber-500 px-3 py-1.5 px-3text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="flex w-full justify-center rounded-md  bg-amber-500 px-3 py-1.5 px-3text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Sign up
               </button>
@@ -125,11 +127,12 @@ export default function Singup() {
           </form>
           <br />
           <button
+
             onClick={logGoogleUser}
             type="button"
-            className="flex w-full justify-center rounded-md bg-amber-500 px-3 py-1.5 px-3text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="flex w-full justify-center  rounded-md bg-transparent px-3 py-1.5 px-3text-sm font-semibold leading-6 text-black hover:text-white duration-500 shadow-sm hover:bg-amber-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  border-2 border-amber-500 "
           >
-            Singup with Google
+            Sing-in with <FcGoogle className="flex justify-center items-center ms-2 mt-1.5 drop-shadow-lg" />oogle
           </button>
           <p className="mt-10 text-center text-sm text-gray-500">
             I Have already !{" "}
