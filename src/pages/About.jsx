@@ -1,11 +1,9 @@
 import React from 'react'
-import Header from '../Component/Header';
-import Footer from '../Component/footer';
+
 
 function About() {
     return (
         <div>
-            <Header />
         
             <section class="text-gray-600 body-font">
                 <div class="container px-5 py-24 mx-auto">
@@ -72,8 +70,7 @@ function About() {
                 </div>
             </section>
 
-            <Footer />
-            <div className="fixed inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 fixed bg-white"
+            <div className="fixed inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 bg-white"
                 aria-hidden="true">
                 <div className="relative  left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
                     style={{

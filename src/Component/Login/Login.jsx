@@ -22,9 +22,9 @@ export default function Login() {
     try {
       const response = await signInWithGooglePopup();
       const user = response.user; // Get the user object from the response
-      console.log("User:", user.providerData[0]);
-      dispatch(loginSuccess(user.providerData[0]));
-      setUserAuth(user.providerData[0]);
+      console.log("User:", user);
+      dispatch(loginSuccess(user));
+      setUserAuth(user);
       navigate("/Home");
       // Now you can access user data such as user.displayName, user.email, user.photoURL, etc.
     } catch (error) {

@@ -120,7 +120,7 @@ export default function Header() {
                         <Menu.Item>
                           {({ active }) => (
                             <Link
-                              to="/Proflie"
+                              to="/Profile"
                               className={`
                                 ${
                                   active ? "bg-gray-100" : ""
@@ -133,12 +133,12 @@ export default function Header() {
                         <Menu.Item>
                           {({ active }) => (
                             <Link
-                              to="#"
+                              to="/Dashboard"
                               className={`${active ? "bg-gray-100" : ""}
                                 block px-4 py-2 text-sm text-dark  hover:text-amber-500 hover:font-semibold
                               `}
                             >
-                              Settings
+                              Dashboard
                             </Link>
                           )}
                         </Menu.Item>
