@@ -14,7 +14,7 @@ import { logOut } from "../redux/slices/auth.slice";
 import { removeUserAuth } from "../utils/sessionStorage";
 
 const navigation = [
-  { name: "Home", href: "/Home" },
+  { name: "Dashboard", href: "/Home" },
   { name: "Category", href: "/Category" },
   { name: "Feature", href: "/Feature" },
   { name: "Contact ", href: "/Contact" },
