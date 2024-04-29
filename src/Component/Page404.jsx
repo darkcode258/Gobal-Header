@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Theam from "./Theam";
 import Footer from "./footer";
 
 export default function Page404() {
+  const navigate = useNavigate();
   return (
     <>
       <Header />
@@ -18,12 +19,12 @@ export default function Page404() {
             Sorry, we couldn’t find the page you’re looking for.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Link
-              to="/"
+            <button
+              onClick={() => navigate(-1)}
               className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Go back home
-            </Link>
+              Go Back
+            </button>
             <Link to="/Contact" className="text-sm font-semibold text-gray-900">
               Contact support <span aria-hidden="true">&rarr;</span>
             </Link>

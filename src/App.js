@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import logo from "./logo.svg";
+
 import "./App.css";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
@@ -10,6 +10,10 @@ import Contact from "./pages/Contact";
 import Feature from "./pages/Feature";
 import Category from "./pages/Category";
 import About from "./pages/About";
+import Dashboard from "./Component/Dashboards/Dashboard";
+import DashboardHome from "./Component/Dashboards/Home";
+import Categories from "./Component/Dashboards/Categories";
+import Products from "./Component/Dashboards/Products";
 import Proflie from "./Component/Proflie/Proflie";
 import Page404 from "./Component/Page404";
 import Loader from "./Component/Loader";
@@ -25,6 +29,9 @@ import {
 } from "./utils/sessionStorage";
 import { getUserAuth } from "./utils/sessionStorage";
 import { sessionDataSet } from "./redux/slices/auth.slice";
+import Header from "./Component/Header";
+import Footer from "./Component/footer";
+import Theam from "./Component/Theam";
 function App() {
   const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
@@ -62,7 +69,9 @@ function App() {
     if (location.pathname === "/") {
       document.title = "Replay Global";
     } else {
-      document.title = "Replay Global" + " - " + location.pathname.slice(1);
+      document.title = `Replay Global - ${
+        location.pathname.split("/").reverse()[0]
+      }`;
     }
   }, [location.pathname]);
 
@@ -78,6 +87,7 @@ function App() {
 
   return (
     <>
+      {getUserAuth() && !!userData && <Header />}
       <ToastContainer />
 
       {getBannerOnce() && bannerLoading && <Banner />}
@@ -93,7 +103,12 @@ function App() {
             <Route path="/Category" element={<Category />} />
             <Route path="/Feature" element={<Feature />} />
             <Route path="/About" element={<About />} />
-            <Route path="/Proflie" element={<Proflie />} />
+            <Route path="/Profile" element={<Proflie />} />
+            <Route path="/Dashboard" element={<Dashboard />}>
+              <Route path="/Dashboard" element={<DashboardHome />} />
+              <Route path="/Dashboard/Products" element={<Products />} />
+              <Route path="/Dashboard/Categories" element={<Categories />} />
+            </Route>
           </>
         ) : (
           <>
@@ -103,6 +118,8 @@ function App() {
         )}
         <Route path="*" element={<Page404 />} />
       </Routes>
+      {getUserAuth() && !!userData && <Footer />}
+      {getUserAuth() && !!userData && <Theam />}
     </>
   );
 }

@@ -5,6 +5,7 @@ import logo from "../../Asseat/images/Global (1).png";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithGooglePopup } from "../../firebase/firebase.utils";
 import { useSelector, useDispatch } from "react-redux";
+import { FcGoogle } from "react-icons/fc";
 import {
   loginStart,
   loginSuccess,
@@ -22,9 +23,9 @@ export default function Login() {
     try {
       const response = await signInWithGooglePopup();
       const user = response.user; // Get the user object from the response
-      console.log("User:", user.providerData[0]);
-      dispatch(loginSuccess(user.providerData[0]));
-      setUserAuth(user.providerData[0]);
+      console.log("User:", user);
+      dispatch(loginSuccess(user));
+      setUserAuth(user);
       navigate("/Home");
       // Now you can access user data such as user.displayName, user.email, user.photoURL, etc.
     } catch (error) {
@@ -38,8 +39,8 @@ export default function Login() {
       {/* <Theamdark /> */}
       <Theam />
 
-      <div className="flex min-h-full flex-1 flex-col justify-center px-0 lg:px-0 items-center border-amber-500 rounded-md ">
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+      <div className="flex min-h-full flex-1 flex-col justify-center px-0 lg:px-0 items-center border-amber-500 rounded-md">
+        <div className="sm:mx-auto sm:w-full sm:max-w-sm ">
           <img className="mx-auto h-10 w-auto" src={logo} alt="Your Company" />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-black">
             Login to your account
@@ -53,7 +54,7 @@ export default function Login() {
                 htmlFor="email"
                 className="block text-sm font-medium leading-6 text-black"
               >
-                Email address
+                Email Address
               </label>
               <div className="mt-2">
                 <input
@@ -63,7 +64,7 @@ export default function Login() {
                   type="email"
                   autoComplete="email"
                   required
-                  className="block w-full rounded-md border-0 py-1.5 px-3 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="font-sans block w-full rounded-md border-0 py-1.5 px-3 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -79,9 +80,9 @@ export default function Login() {
                 <div className="text-sm">
                   <Link
                     to="#"
-                    className="font-semibold text-amber-600 hover:text-amber-500"
+                    className="font-semibold text-gray-500 hover:text-amber-500"
                   >
-                    Forgot password?
+                    Forgot Password ?
                   </Link>
                 </div>
               </div>
@@ -92,7 +93,7 @@ export default function Login() {
                   type="password"
                   autoComplete="current-password"
                   required
-                  className="block w-full rounded-md border-0 py-1.5 px-3  text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="font-sans block w-full rounded-md border-0 py-1.5 px-3  text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -100,7 +101,7 @@ export default function Login() {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-amber-500 px-3 py-1.5 px-3text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="flex w-full justify-center tracking-wide rounded-md bg-amber-500 px-3 py-1.5 px-3text-sm font-semibold leading-6 text-white shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Login
               </button>
@@ -110,9 +111,12 @@ export default function Login() {
           <button
             onClick={logGoogleUser}
             type="button"
-            className="flex w-full justify-center rounded-md bg-amber-500 px-3 py-1.5 px-3text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className=" font-sans flex w-full drop-shadow-sm justify-evenly rounded-md bg-transparent px-3 py-0.5 px-3text-sm font-semibold leading-6 text-black hover:text-white duration-500 shadow-sm hover:bg-amber-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  border-2 border-amber-500 "
           >
-            Login with Google
+            <FcGoogle className="flex justify-start items-center p-0   mt-0.5 drop-shadow-sm size-5" />
+            <div className="flex justify-center items-center m-auto tracking-wide ">
+              Login with Google
+            </div>
           </button>
 
           <p className="mt-10 text-center text-sm text-gray-500">

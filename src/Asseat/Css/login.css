@@ -5,15 +5,9 @@
     display: flex;
     justify-content: center !important; 
     align-items: center !important;
-    /* font-family: Josefin Sans; */
+    font-family: Josefin Sans;
 }
 .sizer1
 {
     padding: 60px;
 }
-@media screen and (max-width :430px){
-    .mt-2{
-        width:310px;
-    }
-}
-/* parth */
