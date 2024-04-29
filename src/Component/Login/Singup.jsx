@@ -63,7 +63,7 @@ export default function Singup() {
                   type="username"
                   autoComplete="username"
                   required
-                  className="block w-full rounded-md border-0 py-1.5 px-3 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="font-sans block w-full rounded-md border-0 py-1.5 px-3 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -72,7 +72,7 @@ export default function Singup() {
                 htmlFor="email"
                 className="block text-sm font-medium leading-6 text-black"
               >
-                Email address
+                Email Address
               </label>
               <div className="mt-2">
                 <input
@@ -82,7 +82,7 @@ export default function Singup() {
                   type="email"
                   autoComplete="email"
                   required
-                  className="block w-full rounded-md border-0 py-1.5 px-3 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="font-sans block w-full rounded-md border-0 py-1.5 px-3 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -96,12 +96,12 @@ export default function Singup() {
                   Password
                 </label>
                 <div className="text-sm">
-                  <Link
+                  {/* <Link
                     to="#"
-                    className="font-semibold text-amber-600 hover:text-amber-500"
+                    className="font-semibold text-gray-500 hover:text-amber-500"
                   >
                     Forgot password?
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
               <div className="mt-2">
@@ -111,7 +111,7 @@ export default function Singup() {
                   type="password"
                   autoComplete="current-password"
                   required
-                  className="block w-full rounded-md border-0 py-1.5 px-3  text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="font-sans block w-full rounded-md border-0 py-1.5 px-3  text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -119,7 +119,7 @@ export default function Singup() {
             <div className="d-flex justify-center items-center">
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md  bg-amber-500 px-3 py-1.5 px-3text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="flex w-full justify-center rounded-md tracking-wide bg-amber-500 px-3 py-1.5 px-3text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Sign up
               </button>
@@ -130,9 +130,11 @@ export default function Singup() {
 
             onClick={logGoogleUser}
             type="button"
-            className="flex w-full justify-center  rounded-md bg-transparent px-3 py-1.5 px-3text-sm font-semibold leading-6 text-black hover:text-white duration-500 shadow-sm hover:bg-amber-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  border-2 border-amber-500 "
-          >
-            Sing-in with <FcGoogle className="flex justify-center items-center ms-2 mt-1.5 drop-shadow-lg" />oogle
+            className="font-sans flex w-full justify-center tracking-wide rounded-md bg-transparent px-3 py-1.5 px-3text-sm font-semibold leading-6 text-black hover:text-white duration-500 shadow-sm hover:bg-amber-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  border-2 border-amber-500 "
+          > <FcGoogle className="flex justify-start items-center p-0   mt-0.5 drop-shadow-sm size-5" />
+          <div className="flex justify-center items-center m-auto ">
+            Login with Google
+          </div>
           </button>
           <p className="mt-10 text-center text-sm text-gray-500">
             I Have already !{" "}

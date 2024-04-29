@@ -22,7 +22,7 @@ const authSlice = createSlice({
       state.loading = true;
     },
     loadingStop: (state) => {
-      state.loading = false;
+      state.loading = false;  
     },
     loginStart: (state) => {
       state.loading = true;
