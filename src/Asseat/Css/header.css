@@ -32,7 +32,19 @@
     margin-right: 10px;
     
 }
+.marr
+{
+    /* background-color: white !important; */
+    /* font-family: Josefin sans-serif !important; */
+    letter-spacing: 1px; 
+    
 
+}
+.font1
+{
+    font-family: 'josefin sans' !important;
+    font-weight: 700 !important;
+}
 .button {
     border-radius: 6px;
     /* background-color: #000000; */

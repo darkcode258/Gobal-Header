@@ -7,7 +7,7 @@ function Home() {
     <>
       {/* className="relative isolate px-6 pt-14 lg:px-8 h-full" */}
 
-      <div>
+      <div className=" py-16  mx-auto bg-white">
         <Section1 />
         <Section2 />
       </div>
