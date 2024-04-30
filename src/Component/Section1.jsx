@@ -52,7 +52,7 @@ function Section1() {
                     <h2 class="text-gray-900 title-font text-lg font-medium">
                       {product?.title || "Title"}
                     </h2>
-                    <p class="mt-1">{product?.price || "$00.00"}</p>
+                    <p class="mt-1">Price - {product?.price || "$00.00"}</p>
                   </div>
                 </div>
               );

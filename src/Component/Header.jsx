@@ -38,7 +38,7 @@ export default function Header() {
   };
 
   return (
-    <Disclosure as="nav" className="bg-gray-800 fixed w11 maar ">
+    <Disclosure as="nav" className="backdrop-blur-sm bg-gray-900/70  fixed w11 maar tracking-normal ">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6  lg:px-6 m-0 ">
@@ -62,12 +62,12 @@ export default function Header() {
                     <img
                       className="h-8 w-auto items-center flex"
                       src={logo}
-                      alt="Your Company"
+                      alt=""
                     />
                   </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-4 item-center tracking-wide mt-1 font1">
                     {navigation.map((item) => (
                       <Link
                         key={item.name}
@@ -75,10 +75,10 @@ export default function Header() {
                         className={`
                           ${
                             item.href === location.pathname
-                              ? "bg-gray-700  text-white"
-                              : "text-gray-300 hover:bg-dark-700 hover:text-amber-500"
+                              ? "bg-gray-700  text-white "
+                              : "text-gray-300  hover:text-amber-500"
                           }
-                          rounded-md px-3 py-2 text-sm font-medium select-none`}
+                          rounded-md px-3 py-2 m-0  text-sm font-medium select-none`}
                       >
                         {item.name}
                       </Link>
@@ -87,21 +87,21 @@ export default function Header() {
                 </div>
               </div>
 
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {/* Profile dropdown */}
+              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
                 <>
-                  <h1 className="text-white font-bold md:block hidden">
-                    {userData?.displayName}
+                  <h1 className="text-white font-medium  md:block hidden font1 ">
+                    {userData?.displayName }
                   </h1>
 
-                  <Menu as="div" className="relative ml-5">
+                  <Menu as="div" className="relative ml-5 ">
                     <div>
-                      <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                      <Menu.Button className="relative flex rounded-full bg-gray-800  text-sm focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">Open user menu</span>
                         <img
-                          className="h-8 w-8 rounded-full"
+                          className="h-8 w-8 rounded-full "
                           src={userData?.photoURL || user1}
                           alt="user"
                         />
@@ -116,7 +116,7 @@ export default function Header() {
                       leaveFrom="transform opacity-100 scale-100"
                       leaveTo="transform opacity-0 scale-95"
                     >
-                      <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Items className="absolute right-0 z-10 mt-2  w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <Menu.Item>
                           {({ active }) => (
                             <Link
@@ -159,16 +159,16 @@ export default function Header() {
                   </Menu>
                   <button
                     type="button"
-                    className=" ms-3 relative rounded-full  bg-gray-800 p-1 text-white hover:text-amber-500 focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                    className=" ms-3 relative rounded-full  hover:bg-gray-800  hover:text-black   focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                   >
                     <span className="absolute -inset-1.5" />
                     <span className="sr-only">View notifications</span>
                     {/* <BellIcon className="h-6 w-6" aria-hidden="true" /> */}
-                    <Menu as="div" className="relative inline-block text-left">
+                    <Menu as="div" className="relative inline-block text-left ">
                       <div>
-                        <Menu.Button className="ms-0 relative rounded-full  bg-gray-800 p-1 text-white hover:text-amber-500 focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                        <Menu.Button className="ms-0 relative rounded-full  hover:bg-gray-800 p-1 text-white  focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                           <BellIcon
-                            className="h-6 w-6 rounded-full"
+                            className="h-6 w-6 rounded-full hover:text-amber-500"
                             aria-hidden="true"
                           />
                           {/* <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" /> */}
@@ -183,7 +183,7 @@ export default function Header() {
                         leaveFrom="transform opacity-100 scale-100"
                         leaveTo="transform opacity-0 scale-95"
                       >
-                        <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                        <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y  divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                           <div className="py-1">
                             <Menu.Item>
                               {({ active }) => (
@@ -271,7 +271,7 @@ export default function Header() {
                                   className={
                                     (active
                                       ? "bg-gray-100 text-gray-900"
-                                      : "text-gray-700",
+                                      : "text-white",
                                     "block px-4 py-2 text-sm")
                                   }
                                 >
@@ -309,24 +309,48 @@ export default function Header() {
           </div>
 
           <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 px-2 pb-3 pt-2">
+            <div className="space-y-1 px-2 pb-3 pt-2 text-white  tracking-wide font1">
               {navigation.map((item) => (
-                <Disclosure.Button
+                <Disclosure >
+                <Link 
                   key={item.name}
                   as="a"
                   to={item.href}
                   className={
                     (item.href === location.pathname
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                      ? "bg-gray-900 text-white "
+                      : "text-white hover:text-amber-500 ",
                     "block rounded-md px-3 py-2 text-base font-medium")
                   }
                   aria-current={item.current ? "page" : undefined}
                 >
                   {item.name}
-                </Disclosure.Button>
+                </Link>
+                </Disclosure>
               ))}
-            </div>
+
+
+                    {/* {navigation.map((item) => (
+                <Disclosure.Button>
+
+                      <Link
+                        key={item.name}
+                        as="a"
+                        to={item.href}
+                        className={`
+                          ${
+                            item.href === location.pathname
+                              ? "bg-gray-700  text-white"
+                              : "text-gray-300  hover:text-amber-500"
+                          }
+                          block rounded-md px-3 py-2 text-base font-medium`}
+                      >
+                        {item.name}
+                      </Link>
+                      </Disclosure.Button>
+                    ))} */}
+                  </div>
+            
           </Disclosure.Panel>
         </>
       )}

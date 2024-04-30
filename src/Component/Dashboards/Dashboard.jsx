@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { greeting } from "../../utils/greeting";
 import { Button } from "bootstrap";
+import { MdClose } from "react-icons/md";
 
 const menuList = [
   {
@@ -76,19 +77,20 @@ const Dashboard = () => {
   const { userData } = useSelector((state) => state.auth);
 
   return (
-    <section class="fixed top-0 left-0 h-screen w-screen z-50 bg-gray-100 dark:bg-gray-900">
-      <aside class="fixed top-0 z-10 ml-[-100%] flex h-screen w-full flex-col justify-between border-r bg-white px-6 pb-3 transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] dark:bg-gray-800 dark:border-gray-700">
+    <section class="fixed top-0 left-0 h-screen w-screen z-50 bg-gray-900">
+      
+      <aside class="fixed top-0 z-10 ml-[-100%] flex h-screen w-full flex-col justify-between border-r px-6 pb-3 transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] dark:bg-gray-800 dark:border-gray-700">
         <div>
           <div class="mt-8 text-center ">
             <img
               src={userData?.photoURL}
               alt=""
-              class="m-auto h-10 w-10 rounded-full object-cover lg:h-28 lg:w-28"
+              class="m-auto h-10 w-10 rounded-full object-cover lg:h-20  lg:w-20"
             />
             <h5 class="mt-4 hidden text-xl font-semibold text-gray-600 lg:block dark:text-gray-300">
               {userData?.displayName}
             </h5>
-            <span class="hidden text-gray-400 lg:block">Admin</span>
+            <span class="hidden text-gray-300 lg:block">Admin</span>
           </div>
 
           <ul class="mt-8 space-y-2 tracking-wide">
@@ -98,11 +100,10 @@ const Dashboard = () => {
                   <Link
                     to={menu.to}
                     aria-label="dashboard"
-                    class={`${
-                      location.pathname == menu.to
-                        ? "from-sky-600 to-cyan-400"
-                        : ""
-                    } relative flex items-center space-x-4 rounded-xl bg-gradient-to-r hover:from-sky-600 hover:to-cyan-400 px-4 py-3 text-white`}
+                    class={`${location.pathname == menu.to
+                      ? "from-sky-600 to-cyan-400"
+                      : ""
+                      } relative flex items-center space-x-4 rounded-xl bg-gradient-to-r hover:from-sky-600 hover:to-cyan-400 px-4 py-3 text-white`}
                   >
                     {menu.icon}
                     {/* <span class="-mr-1 font-medium">{menu.title}</span> */}
@@ -113,7 +114,7 @@ const Dashboard = () => {
             })}
           </ul>
         </div>
-
+{/* 
         <div class="-mx-6 flex items-center justify-between border-t px-6 pt-4 dark:border-gray-700">
           <Link
             to="/"
@@ -141,16 +142,16 @@ const Dashboard = () => {
               Back To Home
             </span>
           </Link>
-        </div>
+        </div> */}
       </aside>
       <div class="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
-        <div class="sticky top-0 h-16 border-b bg-white dark:bg-gray-800 dark:border-gray-700 lg:py-2.5">
+        <div class="sticky top-0 h-16 border-b bg-gray-900 dark:border-gray-700 lg:py-2.5">
           <div class="flex items-center justify-between space-x-4 px-6 2xl:container">
             <h5
               hidden
-              class="text-2xl font-medium text-gray-600 lg:block dark:text-white"
+              class="text-2xl font-medium  lg:block bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-white  dark:text-white"
             >
-              {`${greeting}, Admin`}
+              {`${greeting}  Admin`}
             </h5>
             <button class="-mr-2 h-16 w-12 border-r lg:hidden dark:border-gray-700 dark:text-gray-300">
               <svg
@@ -168,13 +169,17 @@ const Dashboard = () => {
                 />
               </svg>
             </button>
+          <div className="text-red-600 ">
+            <Link to="/">
+            <MdClose className="size-8"/>
+            </Link>
+          </div>
           </div>
         </div>
-
         <div class="px-6 pt-6 2xl:container">
-          <div class="flex h-[80vh] items-center justify-center rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600">
+          {/* <div class="flex h-[80vh] items-center justify-center rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600">
             <Outlet />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
