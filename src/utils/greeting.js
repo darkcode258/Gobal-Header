@@ -10,7 +10,7 @@ function generateGreeting() {
   } else if (currentHour >= 18 && currentHour < 22) {
     greeting = "Good Evening";
   } else {
-    greeting = "Good Night ☾ ";
+    greeting = "Good Night";
   }
 
   return greeting;

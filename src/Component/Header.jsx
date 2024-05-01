@@ -14,8 +14,8 @@ import { logOut } from "../redux/slices/auth.slice";
 import { removeUserAuth } from "../utils/sessionStorage";
 
 const navigation = [
-  { name: "Dashboard", href: "/Home" },
-  { name: "Category", href: "/Category" },
+  { name: "Home", href: "/Home" },
+  { name: "Categories", href: "/Category" },
   { name: "Feature", href: "/Feature" },
   { name: "Contact ", href: "/Contact" },
   { name: "About", href: "/About" },
@@ -38,7 +38,7 @@ export default function Header() {
   };
 
   return (
-    <Disclosure as="nav" className="backdrop-blur-sm bg-gray-900/70  fixed w11 maar tracking-normal ">
+    <Disclosure as="nav" className="backdrop-blur-sm  bg-gray-800/70  fixed w11 maar tracking-normal ">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6  lg:px-6 m-0 ">
@@ -67,18 +67,18 @@ export default function Header() {
                   </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4 item-center tracking-wide mt-1 font1">
+                  <div className="flex space-x-4 item-center tracking-wide mb-2  font1">
                     {navigation.map((item) => (
                       <Link
                         key={item.name}
                         to={item.href}
-                        className={`
+                        className={` mt-0.5
                           ${
                             item.href === location.pathname
-                              ? "bg-gray-700  text-white "
-                              : "text-gray-300  hover:text-amber-500"
+                              ? "bg-gray-700  text-white pt-2.5"
+                              : "text-gray-300  hover:text-amber-500 pt-2.5"
                           }
-                          rounded-md px-3 py-2 m-0  text-sm font-medium select-none`}
+                          rounded-md px-3 py-2  text-sm font-medium select-none `}
                       >
                         {item.name}
                       </Link>
@@ -91,7 +91,7 @@ export default function Header() {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
                 <>
-                  <h1 className="text-white font-medium  md:block hidden font1 ">
+                  <h1 className="text-white font-medium  md:block hidden font1 mt-1.5 tracking-wider">
                     {userData?.displayName }
                   </h1>
 
@@ -116,7 +116,7 @@ export default function Header() {
                       leaveFrom="transform opacity-100 scale-100"
                       leaveTo="transform opacity-0 scale-95"
                     >
-                      <Menu.Items className="absolute right-0 z-10 mt-2  w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Items className="absolute right-0 z-10 mt-2  w-48  origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <Menu.Item>
                           {({ active }) => (
                             <Link

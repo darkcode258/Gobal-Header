@@ -4,7 +4,7 @@ function Feature() {
   return (
     <div>
       <section class="text-gray-600 body-font">
-        <div class="container px-5 py-40 sm:py-80 mx-auto ">
+        <div class="container px-7 py-40 sm:py-80 mx-auto ">
           <h1 class="sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-20">Raw Denim Heirloom Man Braid
             <br class="hidden sm:block"/>Selfies Wayfarers
           </h1>

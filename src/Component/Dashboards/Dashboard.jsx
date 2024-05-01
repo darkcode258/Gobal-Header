@@ -2,8 +2,9 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { greeting } from "../../utils/greeting";
-import { Button } from "bootstrap";
+// import { Button } from "bootstrap";
 import { MdClose } from "react-icons/md";
+import '../../Asseat/Css/deshborad.css'
 
 const menuList = [
   {
@@ -37,7 +38,7 @@ const menuList = [
         fill="currentColor"
       >
         <path
-          class="fill-current text-gray-600 group-hover:text-cyan-600 dark:group-hover:text-cyan-400"
+          class="fill-current text-cyan-400 group-hover:text-cyan-600 dark:group-hover:text-cyan-400"
           d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"
         />
         <path
@@ -64,7 +65,7 @@ const menuList = [
           clip-rule="evenodd"
         />
         <path
-          class="fill-current text-gray-600 group-hover:text-cyan-600 dark:group-hover:text-sky-400"
+          class="fill-current text-cyan-400 group-hover:text-cyan-600 dark:group-hover:text-sky-400"
           d="M6 12a2 2 0 012-2h8a2 2 0 012 2v2a2 2 0 01-2 2H2h2a2 2 0 002-2v-2z"
         />
       </svg>
@@ -92,6 +93,7 @@ const Dashboard = () => {
             </h5>
             <span class="hidden text-gray-300 lg:block">Admin</span>
           </div>
+                <hr style={{height:'2px',borderWidth:'0',color:'Black',backgroundColor:'white', margin:'auto', width:"100%",marginTop:'20px'}} ></hr>
 
           <ul class="mt-8 space-y-2 tracking-wide">
             {menuList?.map((menu, index) => {
@@ -149,7 +151,7 @@ const Dashboard = () => {
           <div class="flex items-center justify-between space-x-4 px-6 2xl:container">
             <h5
               hidden
-              class="text-2xl font-medium  lg:block bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-white  dark:text-white"
+              class="font1 text-2xl font-medium  lg:block bg-clip-text text-transparent bg-gradient-to-r  from-amber-500 to-white  dark:text-white"
             >
               {`${greeting}  Admin`}
             </h5>
