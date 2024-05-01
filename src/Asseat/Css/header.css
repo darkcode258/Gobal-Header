@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
 .big1:hover {
     transform: scale(1.1);
     letter-spacing: 1px;
@@ -26,11 +27,24 @@
     z-index: 1;
 
 }
-.mm11
-{
+
+.mm11 {
     /* margin:auto; */
     margin-right: 10px;
-    
+
+}
+
+.marr {
+
+    letter-spacing: 1px;
+    /* font-weight: 600; */
+
+
+}
+
+.font1 {
+    font-weight: 700 !important;
+    font-family: 'josefin sans' !important;
 }
 
 .button {
@@ -50,11 +64,13 @@
     font-weight: 700;
     letter-spacing: 1px;
 }
-.button:hover{
+
+.button:hover {
     color: orange;
     background-color: #111827;
 
 }
+
 .button span {
     cursor: pointer;
     display: inline-block;

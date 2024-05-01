@@ -6,7 +6,7 @@ function About() {
         <div>
         
             <section class="text-gray-600 body-font">
-                <div class="container px-5 py-24 mx-auto">
+                <div class="container px-7 py-40 sm:py-80 mx-auto">
                     <div class="flex flex-col text-center w-full mb-20">
                         <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Master Cleanse Reliac Heirloom</h1>
                         <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
@@ -55,7 +55,7 @@ function About() {
                     </div>
                 </div>
             </section>
-
+{/* 
             <section class="text-gray-600 body-font">
                 <div class="container px-5 py-24 mx-auto">
                     <div class="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
@@ -68,7 +68,7 @@ function About() {
                         <p class="text-gray-500">Senior Product Designer</p>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             <div className="fixed inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 bg-white"
                 aria-hidden="true">
