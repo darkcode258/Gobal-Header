@@ -11,7 +11,7 @@
 {
     padding: 60px;
 }
-@media screen and  (max-width: 590px){
+@media screen and  (max-width: 640px){
     .mt-2{
         width: 320px !important;
     }
