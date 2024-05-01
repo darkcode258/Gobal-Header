@@ -27,7 +27,7 @@ const Banner = () => {
         alt="logo"
         className="user-select-none w-20 aspect-square animate-bounce animate:scale-75 duration-300"
       />
-      <h1 className={`text-xl bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-black font-bold mt-2 transition-all duration-1000 ease-in-out ${animationTitle.length === title.length ? "animate-pulse" : ""}`}>
+      <h1 className={`text-xl bg-clip-text text-transparent bg-gradient-to-r from-amber-600  via-amber-500  via-30% to-black text-center font-bold mt-2 transition-all duration-1000 ease-in-out  ${animationTitle.length === title.length ? "animate-pulse" : ""}`}>
         {animationTitle.map((letter, index) => (
           <span key={index}>{letter}</span>
         ))}
