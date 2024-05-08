@@ -66,7 +66,7 @@ export default function Header() {
                     />
                   </Link>
                 </div>
-                <div className="hidden sm:ml-6 sm:block ">
+                <div className="hidden sm:ml-6 sm:block ml-10">
                   <div className="flex space-x-4 item-center tracking-wide mb-2  font1">
                     {navigation.map((item) => (
                       <Link
@@ -86,7 +86,7 @@ export default function Header() {
                 </div>
               </div>
 
-              {/* Profile dropdown */}
+                {/* Profile dropdown */}
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
                 <>
@@ -115,7 +115,7 @@ export default function Header() {
                       leaveFrom="transform opacity-100 scale-100"
                       leaveTo="transform opacity-0 scale-95"
                     >
-                      <Menu.Items className="absolute right-0 z-10 mt-2  w-48  origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Items className="absolute right-0 z-10 mt-2  w-48 max-lg::w-20 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <Menu.Item>
                           {({ active }) => (
                             <Link

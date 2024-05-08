@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Products = () => {
+function Products() {
   return (
-    <div>Products</div>
+    <div className='text-white'>Products</div>
   )
 }
 
-export default Products
+export default Products;
