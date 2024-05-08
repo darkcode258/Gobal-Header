@@ -59,7 +59,7 @@ export default function Login() {
               <div className="mt-2">
                 <input
                   id="email"
-                  placeholder="reaplayglobal@gmail.com"
+                  placeholder="replayglobal@gmail.com"
                   name="email"
                   type="email"
                   autoComplete="email"
@@ -115,7 +115,7 @@ export default function Login() {
           >
             <FcGoogle className="flex justify-start items-center p-0   mt-0.5 drop-shadow-sm size-5" />
             <div className="flex justify-center items-center m-auto tracking-wide ">
-              Login with Google
+              Contiune with Google
             </div>
           </button>
 
