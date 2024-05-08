@@ -302,11 +302,9 @@ export default function Header() {
                       className="ms-3 relative rounded-full  hover:bg-gray-800 p-1 text-white  focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                       type="button"
                     >
-                      <BellIcon className="h-6 w-8" aria-hidden="true" />
+                      <BellIcon className="h-6 w-6" aria-hidden="true" />
                     </button>
-                    <span className="absolute rounded-full py-0 px-1 text-xs font-small content-[''] leading-none grid place-items-center top-[4%] right-[2%] translate-x-2/4 -translate-y-2/4 bg-red-700 text-white border-2 border-gray min-w-[5px] min-h-[2px]">
-                      5
-                    </span>
+                    
                   </div>
                 </>
 
