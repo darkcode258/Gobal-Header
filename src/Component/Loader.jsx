@@ -15,16 +15,7 @@ function Loader() {
         wrapperStyle={{}}
         wrapperClass="d-flex justify-center items-center mx-auto "
       />
-      {/* <ThreeDots
-                visible={true}
-                height="100vh"
-                width="90"
-                color="#ffbc04"
-                radius="9"
-                ariaLabel="three-dots-loading"
-                wrapperStyle={{}}
-                wrapperClass="d-flex justify-center items-center m-auto"
-            /> */}
+    
     </div>
   );
 }
