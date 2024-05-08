@@ -59,7 +59,7 @@ export default function Login() {
               <div className="mt-2">
                 <input
                   id="email"
-                  placeholder="reaplayglobal@gmail.com"
+                  placeholder="replayglobal@gmail.com"
                   name="email"
                   type="email"
                   autoComplete="email"
