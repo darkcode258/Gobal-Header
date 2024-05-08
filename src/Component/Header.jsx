@@ -66,7 +66,7 @@ export default function Header() {
                     />
                   </Link>
                 </div>
-                <div className="hidden sm:ml-6 sm:block">
+                <div className="hidden sm:ml-6 sm:block ">
                   <div className="flex space-x-4 item-center tracking-wide mb-2  font1">
                     {navigation.map((item) => (
                       <Link
@@ -78,7 +78,7 @@ export default function Header() {
                               ? "bg-gray-700  text-white pt-2.5"
                               : "text-gray-300  hover:text-amber-500 pt-2.5"
                           }
-                          rounded-md px-3 py-2  text-sm font-medium select-none `}
+                          rounded-md px-3 py-2  text-sm font-bold select-none `}
                       >
                         {item.name}
                       </Link>
