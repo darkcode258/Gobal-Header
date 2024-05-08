@@ -74,7 +74,7 @@ function Footer() {
                                 px-6 focus:outline-none hover:bg-yellow-600 rounded">Submit</button>
                             </div>
                             <p class="text-gray-700 text-sm mt-2 md:text-left text-center">Bitters chicharrones fanny pack
-                                <br class="lg:block hidden"/>waistcoat green juice
+                                <br class="lg:block hidden  "/>waistcoat green juice
                             </p>
                         </div>
                     </div>

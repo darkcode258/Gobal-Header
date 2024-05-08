@@ -309,7 +309,7 @@ export default function Header() {
           </div>
 
           <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 px-2 pb-3 pt-2 text-white  tracking-wide font1">
+            <div className="space-y-1 px-2 pb-3 pt-2 text-white  tracking-wide font1 ">
               {navigation.map((item) => (
                 <Disclosure >
                 <Link 
@@ -320,7 +320,7 @@ export default function Header() {
                     (item.href === location.pathname
                       ? "bg-gray-900 text-white "
                       : "text-white hover:text-amber-500 ",
-                    "block rounded-md px-3 py-2 text-base font-medium")
+                    "block rounded-md px-3 py-2 text-base font-semibold")
                   }
                   aria-current={item.current ? "page" : undefined}
                 >

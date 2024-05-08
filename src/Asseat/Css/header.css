@@ -43,7 +43,7 @@
 .font1
 {
     font-family: 'josefin sans' !important;
-    font-weight: 700 !important;
+    font-weight: 600 ; 
 }
 .button {
     border-radius: 6px;
