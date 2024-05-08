@@ -116,35 +116,7 @@ const Dashboard = () => {
             })}
           </ul>
         </div>
-{/* 
-        <div class="-mx-6 flex items-center justify-between border-t px-6 pt-4 dark:border-gray-700">
-          <Link
-            to="/"
-            class="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              className="h-6 w-6"
-              fill="currentColor"
-              class="bi bi-box-arrow-left"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"
-              />
-              <path
-                fill-rule="evenodd"
-                d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"
-              />
-            </svg>
-            <span class="group-hover:text-gray-700 dark:group-hover:text-white">
-              Back To Home
-            </span>
-          </Link>
-        </div> */}
+
       </aside>
       <div class="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
         <div class="sticky top-0 h-16 border-b bg-gray-900 dark:border-gray-700 lg:py-2.5">

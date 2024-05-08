@@ -133,7 +133,7 @@ export default function Singup() {
             className="font-sans flex w-full justify-center tracking-wide rounded-md bg-transparent px-3 py-1.5 px-3text-sm font-semibold leading-6 text-black hover:text-white duration-500 shadow-sm hover:bg-amber-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  border-2 border-amber-500 "
           > <FcGoogle className="flex justify-start items-center p-0   mt-0.5 drop-shadow-sm size-5" />
           <div className="flex justify-center items-center m-auto ">
-            Login with Google
+          Continue with Google
           </div>
           </button>
           <p className="mt-10 text-center text-sm text-gray-500">
