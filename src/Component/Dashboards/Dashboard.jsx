@@ -151,7 +151,7 @@ const Dashboard = () => {
           <div class="flex items-center justify-between space-x-4 px-6 2xl:container">
             <h5
               hidden
-              class="font1 text-2xl font-medium  lg:block bg-clip-text text-transparent bg-gradient-to-r  from-amber-500 to-white  dark:text-white"
+              class="font1 text-2xl font-medium  lg:block bg-clip-text text-transparent bg-gradient-to-r from-amber-500  from-30% to-70% to-white text-center"
             >
               {`${greeting}  Admin`}
             </h5>

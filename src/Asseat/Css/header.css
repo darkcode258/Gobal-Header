@@ -33,6 +33,10 @@
     margin-right: 10px;
 
 }
+.font1
+{
+    font-family: 'josefin sans' !important;
+    font-weight: 600 ; }
 
 .marr {
 
@@ -41,6 +45,18 @@
 
 
 }
+
+
+}
+
+.marr {
+
+    letter-spacing: 1px;
+    /* font-weight: 600; */
+
+
+}
+
 
 .font1 {
     font-weight: 700 !important;

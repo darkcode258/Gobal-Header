@@ -73,8 +73,13 @@ function Footer() {
                                 <button class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-yellow-500 border-0 py-2 
                                 px-6 focus:outline-none hover:bg-yellow-600 rounded">Submit</button>
                             </div>
+
+                            <p class="text-gray-700 text-sm mt-2 md:text-left text-center">Bitters chicharrones fanny pack
+                                <br class="lg:block hidden  "/>waistcoat green juice
+
                             <p class="text-gray-700 text-sm mt-2 md:text-left text-center ps-8 font-normal">Bitters chicharrones fanny pack
                                 <br class="lg:block hidden"/>waistcoat green juice
+
                             </p>
                         </div>
                     </div>
