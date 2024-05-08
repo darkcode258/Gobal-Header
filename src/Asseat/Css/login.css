@@ -11,9 +11,10 @@
 {
     padding: 60px;
 }
-@media screen and  (max-width: 639px){
+
+@media screen and  (max-width: 430px){
     .mt-2{
-        width: 320px !important;
+        width: 300px !important;
     }
 }
-    /* parth */
+/* parth */
