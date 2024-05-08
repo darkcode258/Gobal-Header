@@ -73,10 +73,9 @@ export default function Header() {
                         key={item.name}
                         to={item.href}
                         className={` mt-0.5
-                          ${
-                            item.href === location.pathname
-                              ? "bg-gray-700  text-white pt-2.5"
-                              : "text-gray-300  hover:text-amber-500 pt-2.5"
+                          ${item.href === location.pathname
+                            ? "bg-gray-700  text-white pt-2.5"
+                            : "text-gray-300  hover:text-amber-500 pt-2.5"
                           }
                           rounded-md px-3 py-2  text-sm font-bold select-none `}
                       >
@@ -87,12 +86,12 @@ export default function Header() {
                 </div>
               </div>
 
-                {/* Profile dropdown */}
+              {/* Profile dropdown */}
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
                 <>
                   <h1 className="text-white font-medium  md:block hidden font1 mt-1.5 tracking-wider">
-                    {userData?.displayName }
+                    {userData?.displayName}
                   </h1>
 
                   <Menu as="div" className="relative ml-5 ">
@@ -122,8 +121,7 @@ export default function Header() {
                             <Link
                               to="/Profile"
                               className={`
-                                ${
-                                  active ? "bg-gray-100" : ""
+                                ${active ? "bg-gray-100" : ""
                                 } block px-4 py-2 text-sm text-dark hover:text-amber-500 hover:font-semibold`}
                             >
                               Your Profile
@@ -157,13 +155,12 @@ export default function Header() {
                       </Menu.Items>
                     </Transition>
                   </Menu>
-                  <button
+                  {/* <button
                     type="button"
                     className=" ms-3 relative rounded-full  hover:bg-gray-800  hover:text-black   focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                   >
                     <span className="absolute -inset-1.5" />
                     <span className="sr-only">View notifications</span>
-                    {/* <BellIcon className="h-6 w-6" aria-hidden="true" /> */}
                     <Menu as="div" className="relative inline-block text-left ">
                       <div>
                         <Menu.Button className="ms-0 relative rounded-full  hover:bg-gray-800 p-1 text-white  focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -171,7 +168,6 @@ export default function Header() {
                             className="h-6 w-6 rounded-full hover:text-amber-500"
                             aria-hidden="true"
                           />
-                          {/* <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" /> */}
                         </Menu.Button>
                       </div>
                       <Transition
@@ -193,7 +189,7 @@ export default function Header() {
                                     (active
                                       ? "bg-gray-100 text-gray-900"
                                       : "text-gray-700",
-                                    "block px-4 py-2 text-sm")
+                                      "block px-4 py-2 text-sm")
                                   }
                                 >
                                   Edit
@@ -208,7 +204,7 @@ export default function Header() {
                                     (active
                                       ? "bg-gray-100 text-gray-900"
                                       : "text-gray-700",
-                                    "block px-4 py-2 text-sm")
+                                      "block px-4 py-2 text-sm")
                                   }
                                 >
                                   Duplicate
@@ -225,7 +221,7 @@ export default function Header() {
                                     (active
                                       ? "bg-gray-100 text-gray-900"
                                       : "text-gray-700",
-                                    "block px-4 py-2 text-sm")
+                                      "block px-4 py-2 text-sm")
                                   }
                                 >
                                   Archive
@@ -240,7 +236,7 @@ export default function Header() {
                                     (active
                                       ? "bg-gray-100 text-gray-900"
                                       : "text-gray-700",
-                                    "block px-4 py-2 text-sm")
+                                      "block px-4 py-2 text-sm")
                                   }
                                 >
                                   Move
@@ -257,7 +253,7 @@ export default function Header() {
                                     (active
                                       ? "bg-gray-100 text-gray-900"
                                       : "text-gray-700",
-                                    "block px-4 py-2 text-sm")
+                                      "block px-4 py-2 text-sm")
                                   }
                                 >
                                   Share
@@ -272,7 +268,7 @@ export default function Header() {
                                     (active
                                       ? "bg-gray-100 text-gray-900"
                                       : "text-white",
-                                    "block px-4 py-2 text-sm")
+                                      "block px-4 py-2 text-sm")
                                   }
                                 >
                                   Add to favorites
@@ -289,7 +285,7 @@ export default function Header() {
                                     (active
                                       ? "bg-gray-100 text-gray-900"
                                       : "text-gray-700",
-                                    "block px-4 py-2 text-sm")
+                                      "block px-4 py-2 text-sm")
                                   }
                                 >
                                   Delete
@@ -300,7 +296,18 @@ export default function Header() {
                         </Menu.Items>
                       </Transition>
                     </Menu>
-                  </button>
+                  </button> */}
+                  <div className="relative inline-flex">
+                    <button
+                      className="ms-3 relative rounded-full  hover:bg-gray-800 p-1 text-white  focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                      type="button"
+                    >
+                      <BellIcon className="h-6 w-8" aria-hidden="true" />
+                    </button>
+                    <span className="absolute rounded-full py-0 px-1 text-xs font-small content-[''] leading-none grid place-items-center top-[4%] right-[2%] translate-x-2/4 -translate-y-2/4 bg-red-700 text-white border-2 border-gray min-w-[5px] min-h-[2px]">
+                      5
+                    </span>
+                  </div>
                 </>
 
                 {/* Profile dropdown */}
@@ -312,25 +319,25 @@ export default function Header() {
             <div className="space-y-1 px-2 pb-3 pt-2 text-white  tracking-wide font1">
               {navigation.map((item) => (
                 <Disclosure >
-                <Link 
-                  key={item.name}
-                  as="a"
-                  to={item.href}
-                  className={
-                    (item.href === location.pathname
-                      ? "bg-gray-900 text-white "
-                      : "text-white hover:text-amber-500 ",
-                    "block rounded-md px-3 py-2 text-base font-medium")
-                  }
-                  aria-current={item.current ? "page" : undefined}
-                >
-                  {item.name}
-                </Link>
+                  <Link
+                    key={item.name}
+                    as="a"
+                    to={item.href}
+                    className={
+                      (item.href === location.pathname
+                        ? "bg-gray-900 text-white "
+                        : "text-white hover:text-amber-500 ",
+                        "block rounded-md px-3 py-2 text-base font-medium")
+                    }
+                    aria-current={item.current ? "page" : undefined}
+                  >
+                    {item.name}
+                  </Link>
                 </Disclosure>
               ))}
 
 
-                    {/* {navigation.map((item) => (
+              {/* {navigation.map((item) => (
                 <Disclosure.Button>
 
                       <Link
@@ -349,8 +356,8 @@ export default function Header() {
                       </Link>
                       </Disclosure.Button>
                     ))} */}
-                  </div>
-            
+            </div>
+
           </Disclosure.Panel>
         </>
       )}
