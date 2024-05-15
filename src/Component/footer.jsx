@@ -13,7 +13,7 @@ function Footer() {
                 <div class="container px-5 pt-24 pb-5 mx-auto">
                     <div class="flex flex-wrap md:text-left text-center order-first" >
                         <div class="lg:w-1/4 md:w-1/2 w-full px-4 "id="fp1">
-                            <h2 class="title-font  text-gray-900 tracking-widest text-sm mb- font-bold">CATEGORIES</h2>
+                            <h2 class="title-font  text-gray-900 tracking-widest text-sm mb-3 font-bold">CATEGORIES</h2>
                             <nav class="list-none mb-10">
                                 <li>
                                     <Link class="text-black hover:text-amber-500 font-medium">First Link</Link>
@@ -30,7 +30,7 @@ function Footer() {
                             </nav>
                         </div>
                         <div class="lg:w-1/4 md:w-1/4 w-full px-4" id="fp2">
-                            <h2 class="title-font  text-gray-900 tracking-widest text-sm mb- font-bold">CATEGORIES</h2>
+                            <h2 class="title-font  text-gray-900 tracking-widest text-sm mb-3 font-bold">CATEGORIES</h2>
                             <nav class="list-none mb-10">
                                 <li>
                                     <Link class="text-black hover:text-amber-500 font-medium">First Link</Link>
