@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, parsePath, useLocation } from "react-router-dom";
 import { greeting } from "../../utils/greeting";
 // import { Button } from "bootstrap";
 import { MdClose } from "react-icons/md";
@@ -30,6 +30,7 @@ const menuList = [
   {
     title: "Products",
     to: "/Dashboard/Products",
+
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +80,7 @@ const Dashboard = () => {
 
   return (
     <section class="fixed top-0 left-0 h-screen w-screen z-50 bg-gray-900">
-      
+
       <aside class="fixed top-0 z-10 ml-[-100%] flex h-screen w-full flex-col justify-between border-r px-6 pb-3 transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] dark:bg-gray-800 dark:border-gray-700">
         <div>
           <div class="mt-8 text-center ">
@@ -93,7 +94,7 @@ const Dashboard = () => {
             </h5>
             <span class="hidden text-gray-300 lg:block">Admin</span>
           </div>
-                <hr style={{height:'2px',borderWidth:'0',color:'Black',backgroundColor:'white', margin:'auto', width:"100%",marginTop:'20px'}} ></hr>
+          <hr style={{ height: '2px', borderWidth: '0', color: 'Black', backgroundColor: 'white', margin: 'auto', width: "100%", marginTop: '20px' }} ></hr>
 
           <ul class="mt-8 space-y-2 tracking-wide">
             {menuList?.map((menu, index) => {
@@ -118,14 +119,14 @@ const Dashboard = () => {
         </div>
 
       </aside>
-      <div class="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
+      <div class="ml-auto  lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
         <div class="sticky top-0 h-16 border-b bg-gray-900 dark:border-gray-700 lg:py-2.5">
           <div class="flex items-center justify-between space-x-4 px-6 2xl:container">
             <h5
               hidden
               class="font1 text-2xl font-medium  lg:block bg-clip-text text-transparent bg-gradient-to-r from-amber-500  from-30% to-70% to-white text-center"
             >
-              {`${greeting}  Admin`}
+              {greeting} {userData?.displayName}
             </h5>
             <button class="-mr-2 h-16 w-12 border-r lg:hidden dark:border-gray-700 dark:text-gray-300">
               <svg
@@ -143,11 +144,11 @@ const Dashboard = () => {
                 />
               </svg>
             </button>
-          <div className="text-red-600 ">
-            <Link to="/">
-            <MdClose className="size-8"/>
-            </Link>
-          </div>
+            <div className="text-red-600 ">
+              <Link to="/">
+                <MdClose className="size-8" />
+              </Link>
+            </div>
           </div>
         </div>
         <div class="px-6 pt-6 2xl:container">

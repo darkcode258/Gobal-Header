@@ -332,22 +332,6 @@ export default function Header() {
                   >
                     {item.name}
                   </Link>
-
-                <Link 
-                  key={item.name}
-                  as="a"
-                  to={item.href}
-                  className={
-                    (item.href === location.pathname
-                      ? "bg-gray-900 text-white "
-                      : "text-white hover:text-amber-500 ",
-                    "block rounded-md px-3 py-2 text-base font-semibold")
-                  }
-                  aria-current={item.current ? "page" : undefined}
-                >
-                  {item.name}
-                </Link>
-
                 </Disclosure>
               ))}
 
