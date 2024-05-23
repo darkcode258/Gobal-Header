@@ -32,7 +32,6 @@ import { sessionDataSet } from "./redux/slices/auth.slice";
 import Header from "./Component/Header";
 import Footer from "./Component/footer";
 import Theam from "./Component/Theam";
-import Proflie2 from "./Component/Proflie/Proflie2";
 function App() {
     const [isLoading, setIsLoading] = useState(false);
     const location = useLocation();
@@ -106,7 +105,6 @@ function App() {
 
 
                         <Route path="/Profile" element={<Proflie />} />
-                        <Route path="/Profile2" element={<Proflie2 />} />
 
                         <Route path="/Dashboard" element={<Dashboard />}>
                             {/* <Route path="/Dashboard" element={<DashboardHome />} /> */}
